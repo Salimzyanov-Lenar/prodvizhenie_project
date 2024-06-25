@@ -1,33 +1,58 @@
-/* Inspiration.css */
 .main__content {
+    margin-top: 50px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.main__content p {
+    color: #BEDB45;
+    font-size: 36px;
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    margin-top: 10px 0px;
+    text-align: center;  /* Aligns the text to the left */
+    width: 100%;  /* Ensures the <p> tag takes the full width of the container */
+    max-width: 1000px;
+}
+
 
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;  /* Centers the images horizontally */
+    gap: 20px;
+    max-width: 1100px; /* Ensure the gallery doesn't stretch too wide, accommodating up to 3 items */
 }
 
 .image-item {
-    width: 350px;
-    height: 450px;
+    width: 350px;  /* Fixed width */
+    height: 450px;  /* Fixed height */
     box-sizing: border-box;
     margin-bottom: 10px;
-    overflow: hidden; /* Скрыть части изображения, выходящие за рамки блока */
-    border-radius: 15px; /* Добавить скругленные углы */
-    cursor: pointer; /* Указатель меняется на курсор при наведении */
+    overflow: hidden;  /* Hide parts of the image that go beyond the container */
+    border-radius: 15px;  /* Add rounded corners */
+    cursor: pointer;  /* Change cursor to pointer on hover */
 }
 
 .image-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Обеспечить заполнение блока изображением */
+    object-fit: cover;  /* Ensure the image covers the container */
     display: block;
-    border-radius: 15px; /* Скруглить изображение вместе с блоком */
+    border-radius: 15px;  /* Round the corners of the image */
 }
 
-/* Стили для модального окна */
+/* Styles for modal window */
 .modal {
     display: flex;
     justify-content: center;
@@ -63,4 +88,28 @@
     color: #fff;
     font-size: 20px;
     text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    .image-item {
+        width: 300px;
+        height: 400px;
+    }
+
+    .image-gallery {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
 }

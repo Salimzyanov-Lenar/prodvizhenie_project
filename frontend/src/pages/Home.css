@@ -1,3 +1,75 @@
-.main__content {
+.main__content_home {
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.hero-section {
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background-image: url('/images/woman-laptop.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.hero-content {
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-size: 79px;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+.hero-content h2 {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0px 0px;
+}
+
+.cta-button {
+    background-color: white;
+    color: #1C199A;
+    border: none;
+    padding: 10px 20px;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 60px;
+    height: 70px;
+}
+
+.description  {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+}
+

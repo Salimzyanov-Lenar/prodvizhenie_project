@@ -6,11 +6,11 @@ from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, InspirationImageSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, InspirationImageSerializer, TeamCardSerializer
 from rest_framework.views import APIView
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from .models import InspirationImage
+from .models import InspirationImage, TeamCard
 
 
 
@@ -72,4 +72,11 @@ class LoginAPI(APIView):
 class InspirationImageListView(generics.ListAPIView):
     queryset = InspirationImage.objects.all()
     serializer_class = InspirationImageSerializer
+    permission_classes = [AllowAny]
+
+
+# TeamCard page view
+class TeamCardListView(generics.ListAPIView):
+    queryset = TeamCard.objects.all()
+    serializer_class = TeamCardSerializer
     permission_classes = [AllowAny]
