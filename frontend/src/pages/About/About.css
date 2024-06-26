@@ -1,0 +1,115 @@
+.main__content {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.background-left {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 600px;
+    width: 600px;
+    background-image: url('./about-right-picture.png'); /* Замените путь на путь к изображению left */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background-right {
+    margin-top: 250px;
+    margin-left: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 450px;
+    width: 450px;
+    background-image: url('./about-left-picture.png'); /* Замените путь на путь к изображению right */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+.about-text-left {
+    font-family: 'Rimma Sans';
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    font-size: 42px;
+    font-weight: bold;
+    z-index: 1; /* Чтобы текст был поверх фона */
+    text-align: left;
+}
+
+.about-text-right {
+    position: absolute;
+    top: 150px;
+    right: 150px;
+    width: 650px;
+    background-color: #9ECDFB; /* светло-синий цвет */
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    z-index: 1; /* Чтобы текст был поверх фона */
+    text-align: left;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+
+.about-bottom-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+}
+
+
+.about-bottom-video {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    z-index: 2;
+}
+
+.new-background-left {
+    width: 100%;
+    height: 300px;
+    background-image: url('./about-bottom.png'); /* Замените путь на ваш путь к изображению */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -200px;
+    z-index: 1;
+}
+
+.new-background-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 350px;
+    width: 350px;
+    background-image: url('./about-thinker.png'); /* Замените путь на ваш путь к изображению */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1; /* Чтобы статуя была над газетой */
+}
