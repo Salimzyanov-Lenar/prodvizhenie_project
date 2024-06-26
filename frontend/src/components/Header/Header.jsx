@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import {ReactComponent as Icon} from './menuIcon.svg';
 import './Header.css';
+import Logo from './Logo.png';
 
 
 export const Header = () => {
@@ -26,6 +27,9 @@ export const Header = () => {
 
     return (
         <header className="header">
+             <Link to="/" className="header__logo-link">
+                <img src={Logo} alt="Logo" className="header__logo" />
+            </Link>
             <nav className={`header__nav ${isOpen ? "active" : ""}`}>
                 <ul className="header__nav-list">
 
@@ -48,12 +52,15 @@ export const Header = () => {
                                 <span>{username}</span>
                                 {dropdownOpen && (
                                     <div className="dropdown-menu">
+                                        <li className="header__nav-item">
+                                            <Link to="/account">Личный кабинет</Link>
+                                        </li>
                                         <button onClick={handleLogout}>Выйти</button>
                                     </div>
                                 )}
                             </div>
                         ) : (
-                            <Link to="/account">ЛИЧНЫЙ КАБИНЕТ</Link>
+                            <Link to="/account/register">ЛИЧНЫЙ КАБИНЕТ</Link>
                         )}
                     </li>
 

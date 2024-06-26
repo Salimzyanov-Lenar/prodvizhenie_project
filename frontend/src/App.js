@@ -22,10 +22,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
-                <Route path="/account/*" element={<Account />} />
+                <Route path="/account/*" element={<PrivateRoute element={<Account />} />} />
                 <Route path="/account/login" element={<Login />} />
                 <Route path="/account/register" element={<Register />} />
-                <Route path="/courses" element={<PrivateRoute element={<Courses />} />} />
+                <Route path="/courses/*" element={<PrivateRoute element={<Courses />} />} />
                 <Route path="/courses/courses_young" element={<PrivateRoute element={<CoursesYoung />} />} />
                 <Route path="/courses/courses_old" element={<PrivateRoute element={<CoursesOld />} />} />
                 <Route path="/inspiration" element={<Inspiration/>} />

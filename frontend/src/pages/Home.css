@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 0 20px; /* Добавим внутренние отступы */
 }
 
 @font-face {
@@ -27,28 +28,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px; /* Добавим внутренние отступы */
 }
-
-
 
 .hero-content {
     position: absolute;
     color: white;
     text-align: center;
+    width: 100%;
 }
 
 .hero-content h1 {
     font-family: 'Rimma Sans';
-    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
     font-size: 79px;
     font-weight: bold;
     margin: 0;
-
 }
 
 .hero-content h2 {
     font-family: 'Rimma Sans';
-    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
     font-size: 60px;
     font-weight: bold;
     margin: 0px 0px;
@@ -67,9 +65,117 @@
     height: 70px;
 }
 
-.description  {
+.description {
     text-align: center;
     margin-top: 60px;
     font-size: 20px;
 }
 
+.under-home {
+    margin-top: 50px;
+    padding-top: 70px; /* Добавляем отступ сверху */
+    text-align: center;
+}
+
+.under-home-text {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Добавим внутренние отступы */
+}
+
+.under-home-video {
+    max-width: 1200px;
+    margin: 50px auto 0 auto; /* Центрируем контейнер видео */
+    padding: 0 20px; /* Добавим внутренние отступы */
+}
+
+.cta-under-home-button {
+    background-color: #1C199A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    width: 100%; /* Сделаем кнопку шириной 100% */
+    max-width: 1200px;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 60px;
+    height: 70px;
+    margin-bottom: 50px;
+    box-sizing: border-box; /* Включим отступы в размер кнопки */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Выровняем текст по центру кнопки */
+    margin-left: auto; /* Центрируем кнопку */
+    margin-right: auto; /* Центрируем кнопку */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    .hero-content h2 {
+        font-size: 40px;
+    }
+
+    .cta-button {
+        font-size: 18px;
+        padding: 8px 16px;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .description {
+        font-size: 16px;
+        margin-top: 40px;
+    }
+
+    .under-home-text h1 {
+        font-size: 24px; /* Уменьшим размер текста */
+    }
+
+    .cta-under-home-button {
+        font-size: 18px;
+        padding: 8px 16px;
+        height: auto;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 30px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 6px 12px;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .description {
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .under-home-text h1 {
+        font-size: 20px; /* Уменьшим размер текста */
+    }
+
+    .cta-under-home-button {
+        font-size: 16px;
+        padding: 6px 12px;
+        height: auto;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+}
