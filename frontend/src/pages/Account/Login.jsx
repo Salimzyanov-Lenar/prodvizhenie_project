@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Account.css';
+import './Login.css';
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -39,23 +39,29 @@ const Login = () => {
     };
 
     return (
-        <div className="account-form">
-            <h2>Вход в аккаунт</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Имя пользователя</label>
-                    <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+        <div className="login-page">
+            <div className="login-container">
+                <div className="login-image">
+                    <img src="/images/auth_picture.svg" alt="Illustration" />
                 </div>
-                <div>
-                    <label>Пароль</label>
-                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                <div className="account-login-form">
+                    <form onSubmit={handleSubmit} id="login-form">
+                        <div className='login-form'>
+                            <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="имя пользователя" />
+                        </div>
+                        <div className='login-form'>
+                            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="пароль" />
+                        </div>
+                    </form>
+                    <p>
+                        Еще нет аккаунта? <Link to="/account/register">Зарегистрироваться</Link>
+                    </p>
+                    {error && <div className="error">{error.detail || 'Ошибка входа'}</div>}
                 </div>
-                <button type="submit">Войти</button>
-            </form>
-            {error && <div className="error">{error.detail || 'Ошибка входа'}</div>}
-            <p>
-                Еще нет аккаунта? <Link to="/account/register">Зарегистрироваться</Link>
-            </p>
+            </div>
+            <div className="button-container-login">
+                <button type="submit" form="login-form">ВХОД</button>
+            </div>
         </div>
     );
 };

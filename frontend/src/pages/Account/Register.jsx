@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Account.css';
+import './Register.css';
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -34,37 +34,41 @@ const Register = () => {
     };
 
     return (
-        <div className="account-form">
-            <h2>Регистрация</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Имя</label>
-                    <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+        <div className="register-page">
+            <div className="register-image">
+                    <img src="/images/auth_picture.svg" alt="Illustration" />
                 </div>
-                <div>
-                    <label>Фамилия</label>
-                    <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
+            <div className="register-container">
+                <div className="account-register-form">
+                    <form onSubmit={handleSubmit} id="register-form">
+                        <div className='register-form'>
+                            <input type="text" name="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required placeholder="имя" />
+                        </div>
+                        <div className='register-form'>
+                            <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder="фамилия" />
+                        </div>
+                        <div className='register-form'>
+                            <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="имя пользователя" />
+                            {error && error.username && <div className="error">{error.username}</div>}
+                        </div>
+                        <div className='register-form'>
+                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="электронная почта" />
+                            {error && error.email && <div className="error">{error.email}</div>}
+                        </div>
+                        <div className='register-form'>
+                            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="пароль" />
+                        </div>
+
+                    </form>
+                    <p>
+                        Уже зарегистрированы? <Link to="/account/login">Войти в аккаунт</Link>
+                    </p>
+                    {error && !error.username && !error.email && <div className="error">{error.detail || 'Ошибка регистрации'}</div>}
                 </div>
-                <div>
-                    <label>Имя пользователя</label>
-                    <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required />
-                    {error && error.username && <div className="error">{error.username}</div>}
-                </div>
-                <div>
-                    <label>Электронная почта</label>
-                    <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    {error && error.email && <div className="error">{error.email}</div>}
-                </div>
-                <div>
-                    <label>Пароль</label>
-                    <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                </div>
-                <button type="submit">Зарегистрироваться</button>
-            </form>
-            {error && !error.username && !error.email && <div className="error">{error.detail || 'Ошибка регистрации'}</div>}
-            <p>
-                Уже зарегистрированы? <Link to="/account/login">Войти в аккаунт</Link>
-            </p>
+            </div>
+            <div className="button-container">
+                <button type="submit" form="register-form">РЕГИСТРАЦИЯ</button>
+            </div>
         </div>
     );
 };

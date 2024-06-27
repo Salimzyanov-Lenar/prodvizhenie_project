@@ -105,11 +105,72 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 350px;
-    width: 350px;
+    height: 300px;
+    width: 300px;
+    padding-right: -200px;
+    padding-bottom: 200px;
     background-image: url('./about-thinker.png'); /* Замените путь на ваш путь к изображению */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1; /* Чтобы статуя была над газетой */
+}
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .background-left, .new-background-right {
+        display: none; /* Убираем картинки на мобильных устройствах */
+    }
+
+    .about-text-left {
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: 32px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .about-text-right {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 90%;
+        margin: 20px auto;
+        font-size: 18px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .background-right {
+        margin-top: 50px;
+        margin-left: 0;
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+    }
+
+    .about-bottom-video {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text-left {
+        font-size: 24px;
+    }
+
+    .about-text-right {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .background-right {
+        height: 150px;
+    }
+
+    .about-bottom-content {
+        margin-top: 20px;
+    }
 }

@@ -65,6 +65,13 @@
     height: 70px;
 }
 
+.cta-link {
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Сохраняем цвет текста */
+}
+
+
+
 .description {
     text-align: center;
     margin-top: 60px;

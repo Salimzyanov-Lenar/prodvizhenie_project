@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    margin-top: 85px;
+    margin-left: auto;
+}
+
+.login-container {
+    margin-top: 0.5px;
+    margin-left: -135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 20px;
+}
+
+.login-image {
+    width: 500px;
+    height: 500px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Перемещаем изображение влево */
+    padding: 20px; /* Ограничиваем максимальную ширину изображения */
+}
+
+.login-image img {
+    margin-top: 120px;
+    max-width: 100%;
+    width: 450px;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.account-login-form {
+    flex: 1;
+    padding: 30px 20px; /* Увеличиваем внутренний отступ */
+    background-color: #9ECDFB;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 620px;
+    margin-left: 75px;
+}
+
+
+.login-form {
+
+    margin-top: 10px;
+    width: 100%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 22px 50px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    text-align: center; /* Центрирование текста по горизонтали */
+    font-family: 'Involve', sans-serif; /* Установите нужный вам шрифт */
+    font-size: 18px; /* Размер шрифта */
+    margin-bottom: 15px; /* Отступ между полями */
+}
+
+.button-container-login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 500px; /* Отступ сверху для кнопки */
+    z-index: 2;
+    margin-left: -660px;
+}
+
+.button-container-login button {
+    font-family: 'Rimma Sans';
+    background-color: #BEDB45;
+    color: #000000;
+    font-weight: bold;
+    padding: 20px 35px;
+    width: 400px;
+    font-size: 24px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.account-login-form p {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Involve', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 40%; /* Уменьшаем ширину контейнера */
+        margin-left: -350px;
+    }
+
+    .login-image {
+        display: none; /* Скрываем изображение на мобильных устройствах */
+    }
+
+    .account-login-form {
+        width: 100%; /* Увеличиваем ширину формы на мобильных устройствах */
+        padding: 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    .login-form input {
+        width: 90%; /* Уменьшаем ширину полей ввода на мобильных устройствах */
+    }
+
+    .button-container-login {
+        width: 90%;
+    }
+
+    .button-container-login button {
+        max-width: 100%;
+        margin-left: -200px;
+    }
+}

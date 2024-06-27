@@ -1,0 +1,152 @@
+.register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+.register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 40px;
+    max-width: 1000px; /* Ограничиваем максимальную ширину */
+    width: 600px;
+    height: 500px;
+
+}
+
+.register-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 450px; /* Ограничиваем максимальную ширину изображения */
+}
+
+.register-image img {
+    margin-top: 120px;
+    margin-left: -150px;
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.account-register-form {
+    flex: 1;
+    padding: 20px;
+    background-color: #9ECDFB;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%; /* Ограничиваем максимальную ширину формы */
+    max-height: 500px;
+}
+
+.account-register-form h2 {
+    margin-bottom: 20px;
+}
+
+.register-form {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 22px 60px;
+    box-sizing: border-box;
+    max-width: 600px;
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    text-align: center; /* Центрирование текста по горизонтали */
+    font-family: 'Involve', sans-serif; /* Установите нужный вам шрифт */
+    font-size: 18px; /* Размер шрифта */
+}
+
+
+
+
+.button-container {
+    margin-top: 680px;
+    margin-left: -450px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    max-width: 400px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.button-container button {
+    font-family: 'Rimma Sans';
+    background-color: #BEDB45;
+    color: #000000;
+    font-weight: bold;
+    padding: 20px 35px;
+    width: 290px;
+    font-size: 24px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer; /* Поднятие кнопки вверх */
+    margin-top: -500px;
+}
+
+.account-register-form p {
+    margin-top: 15px;
+    text-align: center;
+    font-family: 'Involve', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        width: 90%; /* Уменьшаем ширину контейнера */
+    }
+
+    .register-image {
+        display: none; /* Скрываем изображение на мобильных устройствах */
+    }
+
+    .account-register-form {
+        width: 100%; /* Увеличиваем ширину формы на мобильных устройствах */
+    }
+
+    .register-form input {
+        width: 90%; /* Уменьшаем ширину полей ввода на мобильных устройствах */
+    }
+
+    .button-container {
+        width: 90%;
+    }
+
+    .button-container button {
+        margin-left: 20%;
+        max-width: 100%;
+    }
+}
