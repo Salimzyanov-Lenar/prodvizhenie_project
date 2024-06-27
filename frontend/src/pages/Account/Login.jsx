@@ -26,6 +26,9 @@ const Login = () => {
                 console.log('User logged in successfully:', data);
                 localStorage.setItem('token', data.token); // Сохраняем токен в localStorage
                 localStorage.setItem('username', data.user.username); // Сохраняем имя пользователя в localStorage
+                localStorage.setItem('first_name', data.user.first_name);
+                localStorage.setItem('last_name', data.user.last_name);
+                localStorage.setItem('email', data.user.email);
                 navigate('/'); // Перенаправляем на главную страницу
                 window.location.reload(); // Для отображения username на странице
             } else {

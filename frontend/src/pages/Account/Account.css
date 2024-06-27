@@ -1,46 +1,169 @@
-.main-content {
-    margin-top: 50px; /* Отступ, равный высоте header */
-}
-
-.account-form {
-    max-width: 400px;
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-}
-
-.account-form h2 {
-    margin-bottom: 20px;
-}
-
-.account-form form div {
-    margin-bottom: 15px;
-}
-
-.account-form label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.account-form input {
+.account-main-content {
+    padding-top: 200px;
     width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрируем элементы по вертикали */
+    flex-wrap: wrap; /* Обеспечиваем перенос элементов на новую строку при необходимости */
+    max-width: 1470px;
+    margin: auto;
+    background-color: #ffffff;
+    height: 550px;
 }
 
-.account-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #1C199A;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
-.account-form p {
-    margin-top: 15px;
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.account-left{
+    flex: 1;
+    max-width: 50%; /* Ограничиваем ширину блоков */
+    min-width: 300px; /* Минимальная ширина блоков */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    margin: 10px; /* Отступы для разделения блоков */
+}
+
+.account-right {
+    flex: 1;
+    max-width: 60%; /* Ограничиваем ширину блоков */
+    min-width: 300px; /* Минимальная ширина блоков */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px; /* Отступы для разделения блоков */
+    margin-top: -150px;
+    margin-left: -250px;
+}
+
+.account-image-container {
+    width: 400px;
+    height: 400px;
+    max-width: 600px;
+    background-image: url('./account_page.png'); /* Замените путь на ваш путь к изображению */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -200px;
+}
+
+.account-info { /* Полупрозрачный фон для читаемости текста */
+    background-color: rgb(208, 208, 208);
+    padding: 40px 40px;
+    max-width: 80%; /* Ограничиваем максимальную ширину текста */
+    margin-left: 70px;
+    text-align: center;
+}
+
+.account-info h1 {
+    font-size: 20px;
+    font-family: 'Involve';
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.account-info p {
+    font-size: 18px;
+    font-family: 'Involve';
+    color: #000000;
+}
+
+.account-button-right {
+    background-color: #9ECDFB;
+    border: none;
+    font-family: 'Involve';
+    color: white;
+    background-color: #1C199A;
+    padding: 15px 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 220px; /* Ограничиваем ширину кнопки */
+}
+
+.account-button-left {
+    background-color: #9ECDFB;
+    border: none;
+    font-family: 'Involve';
+    color: #000000;
+    padding: 10px 0px;
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    width: 300px; /* Ограничиваем ширину кнопки */
+}
+
+
+.account-button:hover {
+    background-color: #8bbbe1;
+}
+
+.account-right .account-welcome {
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.cursor-container {
+    margin-left: -300px;
+    margin-top: 100px;
+}
+
+.account-cursor {
+    width: 80px; /* Укажите нужный размер логотипа */
+}
+
+.account-logo {
+    width: 50px; /* Укажите нужный размер логотипа */
+}
+
+.account-welcome h1 {
+    font-size: 44px;
+    font-family: 'Rimma Sans';
+    color: #1C199A;
+    margin-bottom: 20px;
+    text-align: center; /* Центрируем заголовок */
+}
+
+.account-welcome p {
+    font-size: 18px;
+    font-family: 'Involve';
+    line-height: 1.5;
+    color: #000000;
+    margin-bottom: 20px;
+    max-width: 80%; /* Ограничиваем максимальную ширину текста */
 }

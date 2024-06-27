@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    margin: auto;
+    width: 1470px;
 }
 
 @font-face {
