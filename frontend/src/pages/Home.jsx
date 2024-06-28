@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import YoutubeEmbed from '../components/YoutubeEmbed/YoutubeEmbed';
@@ -6,6 +6,13 @@ import YoutubeEmbed from '../components/YoutubeEmbed/YoutubeEmbed';
 const Home = () => {
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        document.body.classList.add('home-page');
+        return () => {
+            document.body.classList.remove('home-page');
+        };
+    }, []);
 
     const handleClick = () => {
         navigate('/courses');
@@ -16,9 +23,10 @@ const Home = () => {
         <div className='main__content_home'>
             <div className='hero-section'>
                 <div className='hero-content'>
-                    <h1>ПРОДВИЖЕНИЕ</h1>
-                    <h2>БУДЬ В ДВИЖЕНИИ</h2>
-                    <h2>ПРОДАВАЙ ЛЕГКО</h2>
+                    <h1><span className='highlight'>ПРО</span>ДВИЖЕНИЕ</h1>
+                    <h2>БУДЬ В <span className='highlight'>ДВИЖЕНИИ</span></h2>
+                    <img src="./images/logo-light-blue.png" alt="Логотип" className="logo" />
+                    <h2>ПРОДАВАЙ &nbsp;&nbsp;ЛЕГКО</h2>
                     <button className='cta-button' onClick={handleClick}>НАЧАТЬ ПРОДВИГАТЬСЯ</button>
                     <p className='description'>
                         ПРОдвижение — платформа с бесплатными видеоуроками <br/> о том, как продавать свои товары и услуги в социальных сетях

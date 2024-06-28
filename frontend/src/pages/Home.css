@@ -7,11 +7,32 @@
     padding: 0 20px; /* Добавим внутренние отступы */
 }
 
+body.home-page {
+    overflow-x: hidden;
+}
+
+
+
 @font-face {
     font-family: 'Rimma Sans';
     src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.logo {
+    position: absolute;
+    width: 50px; /* задайте нужный размер */
+    height: auto;
+    margin-top: 20px;
+    margin-left: 60px;
 }
 
 .hero-section {
@@ -52,9 +73,11 @@
     margin: 0px 0px;
 }
 
+
 .cta-button {
     background-color: white;
     color: #1C199A;
+    font-family: 'Involve';
     border: none;
     padding: 10px 20px;
     font-size: 22px;
@@ -76,7 +99,10 @@
     text-align: center;
     margin-top: 60px;
     font-size: 20px;
+    font-family: 'Involve';
 }
+
+
 
 .under-home {
     margin-top: 50px;
@@ -151,6 +177,10 @@
         margin-top: 40px;
         margin-bottom: 30px;
     }
+
+    .logo {
+        display: none; /* Скрываем логотип на экранах шириной до 768px */
+    }
 }
 
 @media (max-width: 576px) {
@@ -185,4 +215,12 @@
         margin-top: 30px;
         margin-bottom: 20px;
     }
+
+    .logo {
+        display: none; /* Скрываем логотип на экранах шириной до 576px */
+    }
+}
+
+.highlight {
+    color: #9ECDFB;
 }

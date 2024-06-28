@@ -10,6 +10,8 @@ const Account = () => {
         email: ''
     });
 
+
+
     useEffect(() => {
         const storedUser = {
             first_name: localStorage.getItem('first_name'),
@@ -20,6 +22,9 @@ const Account = () => {
 
         setUser(storedUser);
     }, []);
+
+
+    
 
     return (
         <div className="account-main-content">

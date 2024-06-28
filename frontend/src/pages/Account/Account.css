@@ -1,3 +1,5 @@
+
+
 .account-main-content {
     padding-top: 200px;
     width: 100%;
@@ -11,6 +13,8 @@
     background-color: #ffffff;
     height: 550px;
 }
+
+
 
 @font-face {
     font-family: 'Rimma Sans';
@@ -166,4 +170,43 @@
     color: #000000;
     margin-bottom: 20px;
     max-width: 80%; /* Ограничиваем максимальную ширину текста */
+}
+
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .account-main-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 100px;
+    }
+
+    .account-left,
+    .account-right {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .account-right {
+        margin-top: 0;
+    }
+
+    .account-image-container {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .account-info h1 {
+        font-size: 18px;
+    }
+
+    .account-info p,
+    .account-welcome p {
+        font-size: 16px;
+    }
+
+    .account-welcome h1 {
+        font-size: 36px;
+    }
 }

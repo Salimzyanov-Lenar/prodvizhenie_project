@@ -16,6 +16,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 .background-left {
     margin-top: 50px;
     position: absolute;
@@ -67,10 +74,11 @@
     padding-bottom: 30px;
     border-radius: 10px;
     font-size: 24px;
+    font-family: 'Involve';
     z-index: 1; /* Чтобы текст был поверх фона */
     text-align: left;
     border-radius: 30px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 
@@ -120,18 +128,14 @@
 
 
 /* Медиа-запросы для адаптивности */
+/* Медиа-запросы для адаптивности */
 @media (max-width: 768px) {
-    .background-left, .new-background-right {
+    .background-left, .background-right, .new-background-right {
         display: none; /* Убираем картинки на мобильных устройствах */
     }
 
     .about-text-left {
-        position: relative;
-        top: 0;
-        left: 0;
-        font-size: 32px;
-        text-align: center;
-        margin: 20px 0;
+        display: none; /* Убираем левый текст на мобильных устройствах */
     }
 
     .about-text-right {
@@ -143,36 +147,46 @@
         font-size: 18px;
         text-align: center;
         padding: 20px;
-    }
-
-    .background-right {
-        margin-top: 50px;
-        margin-left: 0;
         width: 100%;
-        height: 200px;
-        background-size: cover;
+        max-width: 576px;
+        margin-left: 0%;
     }
 
     .about-bottom-video {
         padding: 10px;
     }
+
+    .new-background-left {
+        margin-top: 20px; /* Adjust as needed */
+        height: auto;
+    }
 }
 
 @media (max-width: 576px) {
-    .about-text-left {
-        font-size: 24px;
-    }
-
     .about-text-right {
         font-size: 16px;
         padding: 10px;
     }
 
-    .background-right {
-        height: 150px;
+    .about-text-right {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 90%;
+        margin: 20px auto;
+        font-size: 18px;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        max-width: 400px;
+        margin-left: 0%;
     }
 
     .about-bottom-content {
         margin-top: 20px;
+    }
+
+    .new-background-left {
+        height: 200px;
     }
 }

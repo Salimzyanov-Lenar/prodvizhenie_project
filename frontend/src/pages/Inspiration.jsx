@@ -40,7 +40,7 @@ const Inspiration = () => {
 
     return (
         <div className='main__content'>
-            <p>ВДОХНОВЛЯЙТЕСЬ, ВДОХНОВЛЯЙТЕ!</p>
+            <p className='inspiration-text'>ВДОХНОВЛЯЙТЕСЬ, ВДОХНОВЛЯЙТЕ!</p>
             <div className='image-gallery'>
                 {images.map(image => (
                     <div key={image.id} className='image-item'>
