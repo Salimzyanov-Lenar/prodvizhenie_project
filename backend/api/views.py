@@ -6,11 +6,11 @@ from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, InspirationImageSerializer, TeamCardSerializer
+from .serializers import UserSerializer, RegisterSerializer, LoginSerializer, InspirationImageSerializer, TeamCardSerializer, CourseSerializer
 from rest_framework.views import APIView
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from .models import InspirationImage, TeamCard
+from .models import InspirationImage, TeamCard, Course, Audience
 
 
 
@@ -80,3 +80,32 @@ class TeamCardListView(generics.ListAPIView):
     queryset = TeamCard.objects.all()
     serializer_class = TeamCardSerializer
     permission_classes = [AllowAny]
+
+
+class CourseListAPIView(generics.ListAPIView):
+    serializer_class = CourseSerializer
+    permission_classes = [AllowAny]
+
+
+    def get_queryset(self):
+        audience_id = self.kwargs['audience_id']
+        return Course.objects.filter(audience__id=audience_id)
+    
+
+class CourseDetailAPIView(generics.RetrieveAPIView):
+    permission_classes = [AllowAny]
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+
+
+class NextCourseAPIView(APIView):
+    permission_classes = [AllowAny]
+    def get(self, request, pk, audience_id):
+        current_course = Course.objects.get(pk=pk)
+        next_course = Course.objects.filter(audience__id=audience_id, id__gt=pk).order_by('id').first()
+
+        if not next_course:
+            next_course = Course.objects.filter(audience__id=audience_id).order_by('id').first()
+
+        serializer = CourseSerializer(next_course)
+        return Response(serializer.data)

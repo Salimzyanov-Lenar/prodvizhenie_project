@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import InspirationImage, TeamCard
+from .models import InspirationImage, TeamCard, Course, Audience
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,3 +41,9 @@ class TeamCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = TeamCard
         fields = '__all__'
+
+
+class CourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Course
+        fields = ['id', 'title', 'description', 'video_id', 'audience']

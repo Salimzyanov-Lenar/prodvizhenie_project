@@ -10,6 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Courses from './pages/Courses/Courses';
 import CoursesYoung from './pages/Courses/CoursesYoung';
 import CoursesOld from './pages/Courses/CoursesOld';
+import CourseDetail from './pages/Courses/CourseDetail';
 import Inspiration from './pages/Inspiration';
 import Team from './pages/Team';
 
@@ -25,9 +26,10 @@ function App() {
                 <Route path="/account/*" element={<PrivateRoute element={<Account />} />} />
                 <Route path="/account/login" element={<Login />} />
                 <Route path="/account/register" element={<Register />} />
-                <Route path="/courses/*" element={<PrivateRoute element={<Courses />} />} />
+                <Route path="/courses" element={<PrivateRoute element={<Courses />} />} />
                 <Route path="/courses/courses_young" element={<PrivateRoute element={<CoursesYoung />} />} />
                 <Route path="/courses/courses_old" element={<PrivateRoute element={<CoursesOld />} />} />
+                <Route path="/course/:id" element={<PrivateRoute element={<CourseDetail />} />} />
                 <Route path="/inspiration" element={<Inspiration/>} />
                 <Route path="/team" element={<Team/>} />
             </Routes>
