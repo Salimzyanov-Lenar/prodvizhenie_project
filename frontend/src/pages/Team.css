@@ -14,6 +14,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 .team__content p {
     color: #1C199A;
     font-size: 36px;
@@ -37,7 +44,7 @@
 
 .team-item {
     width: 300px;  /* Fixed width */
-    height: 320px;  /* Fixed height */
+    height: 350px;  /* Fixed height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,6 +82,7 @@
 }
 
 .team-details p {
+    font-family: 'Involve';
     margin: 0;
     font-size: 1em;
     color: #000000;
