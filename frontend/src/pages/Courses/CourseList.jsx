@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './CourseList.css';
+import logo from './logo.png';
 
-const CourseList = ({ audienceId }) => {
+const CourseList = ({ audienceSlug }) => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/courses/${audienceId}/`)
+    fetch(`http://127.0.0.1:8000/api/courses/${audienceSlug}/`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -13,21 +15,24 @@ const CourseList = ({ audienceId }) => {
         return response.json();
       })
       .then(data => {
-        console.log(data); // Добавим отладку
+        console.log(data);
         setCourses(data);
       })
       .catch(error => {
         console.error('Fetch error:', error);
       });
-  }, [audienceId]);
+  }, [audienceSlug]);
 
   return (
-    <div>
-      {courses.map(course => (
-        <div key={course.id}>
-          <Link to={`/course/${course.id}`}>
-            <h2>{course.title}</h2>
-            <p>{course.description}</p>
+    <div className='course-list'>
+      {courses.map((course, index) => (
+        <div key={course.id} className='course-item'>
+          <Link to={`/course/${course.slug}`}>
+            <div className='course-step'>{index + 1}</div>
+            <img src={logo} alt='logo' className='course-logo' />
+            <h2 className='course-title'>{course.title}</h2>
+            <p className='course-description'>{course.description}</p>
+            <img src={course.image} alt='' className='course-icon' />
           </Link>
         </div>
       ))}

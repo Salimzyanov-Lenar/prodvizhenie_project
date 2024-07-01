@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.main__content-coursesold {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+.main__content-coursesold h1 {
+    font-family: 'Rimma Sans', sans-serif;
+    margin-bottom: 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Отступ между блоками и изображением */
+    position: relative; /* для позиционирования изображения */
+}
+
+
+.image-container {
+    display: fixed;
+    margin-top: -400px;
+}
+
+.side-image {
+    width: 400px;
+    height: auto;
+}

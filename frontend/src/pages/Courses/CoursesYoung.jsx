@@ -1,13 +1,16 @@
 import React from 'react';
 import CourseList from './CourseList';
+import './CoursesYoung.css';
 
 const CoursesYoung = () => {
-    const audienceId = 1;
+    const audienceSlug = 'young';
 
     return (
-        <div className='main__content'>
-            <p>Добро пожаловать на страницу молодежных курсов!</p>
-            <CourseList audienceId={audienceId} />
+        <div className='main__content-coursesyoung'>
+            <h1>Темы для изучения</h1>
+            <div className='content-container'>
+                <CourseList audienceSlug={audienceSlug} />
+            </div>
         </div>
     );
 };

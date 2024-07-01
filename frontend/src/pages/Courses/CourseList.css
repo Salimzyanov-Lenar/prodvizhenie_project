@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Rimma Sans';
+    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Involve';
+    src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+
+.course-item {
+    background: #BEDB45; /* Пример цвета фона */
+    border-radius: 10px;
+    padding: 16px;
+    transition: transform 0.2s;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    margin-top: 25px;
+    color: #000; /* Цвет текста */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-item:hover {
+    transform: scale(1.05);
+}
+
+.course-step {
+    font-family: 'Rimma Sans';
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0px 10px;
+    margin-top: -5px;
+    border-radius: 50%;
+    color: #000;
+}
+
+.course-title {
+    font-family: 'Involve';
+    font-size: 1.8em;
+    margin: 0;
+    text-align: left;
+    margin-top: 70px; /* Достаточно места для номера сверху */
+    text-decoration: none;
+    color: #000;
+}
+
+.course-description {
+    font-family: 'Involve';
+    margin-top: 0px;
+    font-size: 1.8em;
+    color: #000;
+    text-align: left;
+}
+
+.course-item a {
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    color: inherit; /* Наследует цвет текста */
+}
+
+.course-icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+.course-logo {
+    width: 65px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .course-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-item {
+        width: 100%;
+        max-width: none; /* Убирает максимальную ширину */
+    }
+}

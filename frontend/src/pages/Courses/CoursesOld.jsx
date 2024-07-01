@@ -1,13 +1,16 @@
 import React from 'react';
 import CourseList from './CourseList';
+import './CoursesOld.css';
 
 const CoursesOld = () => {
-    const audienceId = 2;
+    const audienceSlug = 'old';
 
     return (
-        <div className='main__content'>
-            <p>Добро пожаловать на страницу курсов для взрослых!</p>
-            <CourseList audienceId={audienceId} />
+        <div className='main__content-coursesold'>
+            <h1>Темы для изучения</h1>
+            <div className='content-container'>
+                <CourseList audienceSlug={audienceSlug} />
+            </div>
         </div>
     );
 };

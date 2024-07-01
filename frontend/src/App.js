@@ -29,7 +29,7 @@ function App() {
                 <Route path="/courses" element={<PrivateRoute element={<Courses />} />} />
                 <Route path="/courses/courses_young" element={<PrivateRoute element={<CoursesYoung />} />} />
                 <Route path="/courses/courses_old" element={<PrivateRoute element={<CoursesOld />} />} />
-                <Route path="/course/:id" element={<PrivateRoute element={<CourseDetail />} />} />
+                <Route path="/course/:slug" element={<PrivateRoute element={<CourseDetail />} />} />
                 <Route path="/inspiration" element={<Inspiration/>} />
                 <Route path="/team" element={<Team/>} />
             </Routes>

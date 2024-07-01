@@ -88,24 +88,26 @@ class CourseListAPIView(generics.ListAPIView):
 
 
     def get_queryset(self):
-        audience_id = self.kwargs['audience_id']
-        return Course.objects.filter(audience__id=audience_id)
+        audience_slug = self.kwargs['audience_slug']
+        return Course.objects.filter(audience__slug=audience_slug)
     
 
 class CourseDetailAPIView(generics.RetrieveAPIView):
     permission_classes = [AllowAny]
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    lookup_field = 'slug'
 
 
 class NextCourseAPIView(APIView):
     permission_classes = [AllowAny]
-    def get(self, request, pk, audience_id):
-        current_course = Course.objects.get(pk=pk)
-        next_course = Course.objects.filter(audience__id=audience_id, id__gt=pk).order_by('id').first()
+
+    def get(self, request, slug, audience_slug):
+        current_course = Course.objects.get(slug=slug)
+        next_course = Course.objects.filter(audience__slug=audience_slug, id__gt=current_course.id).order_by('id').first()
 
         if not next_course:
-            next_course = Course.objects.filter(audience__id=audience_id).order_by('id').first()
+            next_course = Course.objects.filter(audience__slug=audience_slug).order_by('id').first()
 
         serializer = CourseSerializer(next_course)
         return Response(serializer.data)

@@ -43,7 +43,14 @@ class TeamCardSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class AudienceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Audience
+        fields = ['id', 'name', 'slug']
+
 class CourseSerializer(serializers.ModelSerializer):
+    audience = AudienceSerializer(read_only=True)
+
     class Meta:
         model = Course
-        fields = ['id', 'title', 'description', 'video_id', 'audience']
+        fields = ['id', 'title', 'description', 'video_id', 'image', 'audience', 'slug']
