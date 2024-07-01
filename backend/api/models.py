@@ -40,6 +40,7 @@ class Course(models.Model):
     video_id = models.CharField(max_length=100)
     image = models.ImageField(upload_to='courses_logo/')
     audience = models.ForeignKey(Audience, on_delete=models.CASCADE, related_name='courses')
+    files_link = models.URLField(max_length=200, blank=True, null=True)  # Новое поле для ссылки
     slug = models.SlugField(unique=True, blank=True, null=True)
 
     def save(self, *args, **kwargs):

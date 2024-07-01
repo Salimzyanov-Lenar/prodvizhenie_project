@@ -51,11 +51,19 @@ const CourseDetail = () => {
   if (!course) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{course.title}</h1>
-      <p>{course.description}</p>
+    <div className="course-detail">
       <YoutubeEmbed embedId={course.video_id} />
-      <button onClick={handleNextVideo}>Next Video</button>
+      <div className="course-buttons-container">
+        <div className="course-buttons">
+          {course.files_link && (
+            <a href={course.files_link} target="_blank" rel="noopener noreferrer" className="button files-button">
+              ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ
+            </a>
+          )}
+          <button onClick={handleNextVideo} className="button next-button">СЛЕДУЮЩИЙ УРОК</button>
+        </div>
+        <img src="/images/newspaper.png" alt="Next Lesson" className="background-image" />
+      </div>
     </div>
   );
 };
