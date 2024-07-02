@@ -24,6 +24,10 @@ const Team = () => {
 
         fetchTeamCards();
     }, []);
+    
+    const replaceHyphens = (text) => {
+        return text.replace(/-/g, '\u2011'); // \u2011 это Unicode для неразрывного дефиса
+    };
 
     return (
         <div className='team__content'>
@@ -39,7 +43,7 @@ const Team = () => {
                         />
                         <div className='team-details'>
                             <h2>{card.name}</h2>
-                            <p>{card.description}</p>
+                            <p>{replaceHyphens(card.description)}</p>
                         </div>
                     </div>
                 ))}

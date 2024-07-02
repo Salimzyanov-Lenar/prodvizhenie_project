@@ -23,6 +23,10 @@ class RegisterAPI(APIView):
         data = request.data
         username = data.get('username', '')
         email = data.get('email', '')
+        password = data.get('password', '')
+
+        if len(password) < 8:
+            return Response({"password": ["Пароль должен быть не менее 8 символов."]}, status=status.HTTP_400_BAD_REQUEST)
 
         # Проверка уникальности username
         if User.objects.filter(username=username).exists():

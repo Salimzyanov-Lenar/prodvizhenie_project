@@ -55,11 +55,11 @@
 }
 
 .account-image-container {
-    width: 400px;
-    height: 400px;
+    width: 330px;
+    height: 330px;
     max-width: 600px;
     background-image: url('./account_page.png'); /* Замените путь на ваш путь к изображению */
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
@@ -71,10 +71,11 @@
 }
 
 .account-info { /* Полупрозрачный фон для читаемости текста */
-    background-color: rgb(208, 208, 208);
-    padding: 40px 40px;
-    max-width: 80%; /* Ограничиваем максимальную ширину текста */
-    margin-left: 70px;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 60px;
+    max-width: 55%; /* Ограничиваем максимальную ширину текста */
+    max-height: 55%;
+    margin-left: 10px;
     text-align: center;
 }
 
@@ -83,12 +84,14 @@
     font-family: 'Involve';
     margin-bottom: 10px;
     color: #000000;
+    text-align: left;
 }
 
 .account-info p {
     font-size: 18px;
     font-family: 'Involve';
     color: #000000;
+    text-align: left;
 }
 
 .account-button-right {

@@ -106,7 +106,7 @@
     }
 
     .course-item {
-        width: 100%;
-        max-width: none; /* Убирает максимальную ширину */
+        width: 80%;
+        max-width: none; /* Убирает максимальную ширину */  
     }
 }

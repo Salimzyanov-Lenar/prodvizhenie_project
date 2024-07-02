@@ -19,6 +19,13 @@
 @font-face {
     font-family: 'Involve';
     src: url('/fonts/Involve-Bold.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InvolveRegular';
+    src: url('/fonts/Involve-Regular.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -74,11 +81,14 @@
     padding-bottom: 30px;
     border-radius: 10px;
     font-size: 24px;
-    font-family: 'Involve';
+    font-family: 'InvolveRegular';
     z-index: 1; /* Чтобы текст был поверх фона */
     text-align: left;
     border-radius: 30px;
-    font-weight: 400;
+}
+
+.highlight-about {
+    font-family: 'Involve'; /* Или любой другой цвет, который вам нужен */
 }
 
 

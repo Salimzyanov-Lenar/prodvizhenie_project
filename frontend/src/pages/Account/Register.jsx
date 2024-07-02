@@ -8,12 +8,23 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [usernameError, setUsernameError] = useState(null);
+    const [emailError, setEmailError] = useState(null);
+    const [passwordError, setPasswordError] = useState(null);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setUsernameError(null);
+        setEmailError(null);
+        setPasswordError(null);
         setError(null);
+
+        if (password.length < 8) {
+            setPasswordError("Пароль должен быть не менее 8 символов.");
+            return;
+        }
 
         const response = await fetch('http://localhost:8000/api/register/', {
             method: 'POST',
@@ -29,6 +40,9 @@ const Register = () => {
             navigate('/account/login'); // Перенаправляем на страницу входа
         } else {
             const errorData = await response.json();
+            if (errorData.username) setUsernameError(errorData.username);
+            if (errorData.email) setEmailError(errorData.email);
+            if (errorData.password) setPasswordError(errorData.password);
             setError(errorData);
         }
     };
@@ -48,15 +62,22 @@ const Register = () => {
                             <input type="text" name="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder="фамилия" />
                         </div>
                         <div className='register-form'>
-                            <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="имя пользователя" />
-                            {error && error.username && <div className="error">{error.username}</div>}
+                            <div className="input-container">
+                                <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="имя пользователя" />
+                                {usernameError && <div className="tooltip">{usernameError}</div>}
+                            </div>
                         </div>
                         <div className='register-form'>
-                            <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="электронная почта" />
-                            {error && error.email && <div className="error">{error.email}</div>}
+                            <div className="input-container">
+                                <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="электронная почта" />
+                                {emailError && <div className="tooltip">{emailError}</div>}
+                            </div>
                         </div>
                         <div className='register-form'>
-                            <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="пароль" />
+                            <div className="input-container">
+                                <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="пароль" />
+                                {passwordError && <div className="tooltip">{passwordError}</div>}
+                            </div>
                         </div>
 
                     </form>

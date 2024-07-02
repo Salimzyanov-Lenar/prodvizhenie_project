@@ -123,6 +123,34 @@
     font-family: 'Involve', sans-serif;
 }
 
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #1C199A;
+    font-family: 'Involve', sans-serif;
+    color: white;
+    padding: 15px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+    z-index: 1;
+    top: -30px; /* Расположение флажка */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+
+
 @media (max-width: 768px) {
     .register-container {
         flex-direction: column;
