@@ -27,7 +27,7 @@
 .account-left,
 .account-right {
     flex: 1;
-    max-width: 50%; /* Limit block width */
+    max-width: 52%; /* Limit block width */
     min-width: 300px; /* Minimum block width */
     display: flex;
     flex-direction: column;
