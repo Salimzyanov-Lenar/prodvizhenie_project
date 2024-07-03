@@ -39,7 +39,9 @@ const Account = () => {
                         </div>
                     </div>
                 </div>
-                <button className="account-button-left">обучающие материалы</button>
+                <a href="https://360.yandex.ru/disk/" target="_blank" rel="noopener noreferrer">
+                    <button className="account-button-left">обучающие материалы</button>
+                </a>
             </div>
             <div className="account-right">
                 <div className="account-welcome">
@@ -47,8 +49,10 @@ const Account = () => {
                         <img src="./images/logo.png" alt="Logo" className="account-logo" />
                     </div>
                     <h1>ДОБРО ПОЖАЛОВАТЬ!</h1>
-                    <p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст </p>
-                    <button className="account-button-right">написать нам</button>
+                    <p>Если у вас есть проблемы в продвижении — напишите нам. <br /><br />Детально опишите ситуацию: проблемы, результаты, желания, а наша команда экспертов даст индивидуальную обратную связь.<br /><br /> С заботой, ваше ПРОдвижение!</p>
+                    <a href="mailto:salimzyanov_lenar@mail.ru">
+                        <button className="account-button-right">написать нам</button>
+                    </a>
                 </div>
             </div>
         </div>

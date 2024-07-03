@@ -1,20 +1,14 @@
-
-
 .account-main-content {
-    padding-top: 200px;
+    padding-top: 300px;
     width: 100%;
-    margin: auto;
+    max-width: 1200px; /* Ограничиваем максимальную ширину */
+    margin: auto; /* Центрируем контейнер */
     display: flex;
     justify-content: space-between;
     align-items: center; /* Центрируем элементы по вертикали */
     flex-wrap: wrap; /* Обеспечиваем перенос элементов на новую строку при необходимости */
-    max-width: 1470px;
-    margin: auto;
     background-color: #ffffff;
-    height: 550px;
 }
-
-
 
 @font-face {
     font-family: 'Rimma Sans';
@@ -30,26 +24,19 @@
     font-style: normal;
 }
 
-.account-left{
+.account-left,
+.account-right {
     flex: 1;
-    max-width: 50%; /* Ограничиваем ширину блоков */
-    min-width: 300px; /* Минимальная ширина блоков */
+    max-width: 50%; /* Limit block width */
+    min-width: 300px; /* Minimum block width */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 10px; /* Отступы для разделения блоков */
+    margin: 10px; /* Spacing between blocks */
 }
 
 .account-right {
-    flex: 1;
-    max-width: 60%; /* Ограничиваем ширину блоков */
-    min-width: 300px; /* Минимальная ширина блоков */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px; /* Отступы для разделения блоков */
     margin-top: -150px;
     margin-left: -250px;
 }
@@ -58,7 +45,7 @@
     width: 330px;
     height: 330px;
     max-width: 600px;
-    background-image: url('./account_page.png'); /* Замените путь на ваш путь к изображению */
+    background-image: url('./account_page.png'); /* Replace with your image path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -70,13 +57,14 @@
     margin-top: -200px;
 }
 
-.account-info { /* Полупрозрачный фон для читаемости текста */
+.account-info {
     background-color: rgb(255, 255, 255);
     padding: 40px 60px;
-    max-width: 55%; /* Ограничиваем максимальную ширину текста */
-    max-height: 55%;
+    width: 200px; /* Limit text width */
+    height: 200px;
     margin-left: 10px;
     text-align: center;
+    
 }
 
 .account-info h1 {
@@ -94,7 +82,8 @@
     text-align: left;
 }
 
-.account-button-right {
+.account-button-right,
+.account-button-left {
     background-color: #9ECDFB;
     border: none;
     font-family: 'Involve';
@@ -106,23 +95,15 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
-    width: 220px; /* Ограничиваем ширину кнопки */
+    width: 220px; /* Limit button width */
 }
 
 .account-button-left {
-    background-color: #9ECDFB;
-    border: none;
-    font-family: 'Involve';
     color: #000000;
+    background-color: #9ECDFB;
     padding: 10px 0px;
-    border-radius: 12px;
-    font-size: 22px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 10px;
-    width: 300px; /* Ограничиваем ширину кнопки */
+    width: 300px; /* Limit button width */
 }
-
 
 .account-button:hover {
     background-color: #8bbbe1;
@@ -147,15 +128,15 @@
 
 .cursor-container {
     margin-left: -300px;
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .account-cursor {
-    width: 80px; /* Укажите нужный размер логотипа */
+    width: 80px; /* Specify desired logo size */
 }
 
 .account-logo {
-    width: 50px; /* Укажите нужный размер логотипа */
+    width: 50px; /* Specify desired logo size */
 }
 
 .account-welcome h1 {
@@ -163,7 +144,7 @@
     font-family: 'Rimma Sans';
     color: #1C199A;
     margin-bottom: 20px;
-    text-align: center; /* Центрируем заголовок */
+    text-align: center; /* Center the title */
 }
 
 .account-welcome p {
@@ -172,14 +153,14 @@
     line-height: 1.5;
     color: #000000;
     margin-bottom: 20px;
-    max-width: 80%; /* Ограничиваем максимальную ширину текста */
+    max-width: 80%; /* Limit text width */
+    text-align: center;
 }
 
-
-/* Медиа-запросы для адаптивности */
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
     .account-main-content {
-        flex-direction: column-reverse;
+        flex-direction: column; /* Stack elements in a column */
         align-items: center;
         padding-top: 100px;
     }
@@ -196,6 +177,26 @@
 
     .account-image-container {
         margin-top: 20px;
+    }
+
+    .account-welcome {
+        order: 1;
+    }
+
+    .account-info {
+        order: 2;
+    }
+
+    .account-button-left {
+        order: 3;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .account-button-right {
+        order: 4;
+        width: 80%;
+        max-width: 300px;
     }
 }
 

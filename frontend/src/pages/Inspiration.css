@@ -1,4 +1,5 @@
-.main__content {
+.inspiration__content {
+    margin-top: 200px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -6,7 +7,6 @@
     text-align: center;
     padding-top: 150px;
 }
-
 
 @font-face {
     font-family: 'Rimma Sans';
@@ -19,46 +19,50 @@
     color: #BEDB45;
     font-size: 43px;
     font-family: 'Rimma Sans';
-    src: url('/fonts/RIMMA_SANS-BOLD.ttf') format('truetype');
-    margin-top: 10px 0px;
-    text-align: center;  /* Aligns the text to the left */
-    width: 100%;  /* Ensures the <p> tag takes the full width of the container */
+    margin-top: 10px 0;
+    text-align: center;
+    width: 100%;
     max-width: 1000px;
     margin-top: -250px;
 }
 
-
 .image-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;  /* Centers the images horizontally */
+    justify-content: center;
     gap: 20px;
-    max-width: 1300px; /* Ensure the gallery doesn't stretch too wide, accommodating up to 3 items */
+    max-width: 1300px;
 }
 
 .image-item {
-    width: 350px;  /* Fixed width */
-    height: 200px;  /* Fixed height */
+    width: 350px; /* Fixed width for all items */
+    height: 250px; /* Fixed height for all items */
     box-sizing: border-box;
     margin-bottom: 10px;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;  /* Hide parts of the image that go beyond the container */
-    border-radius: 15px;  /* Add rounded corners */
-    cursor: pointer;  /* Change cursor to pointer on hover */
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Center image vertically */
 }
 
 .image-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Ensure the image covers the container */
+    object-fit: cover;
     display: block;
-    border-radius: 15px;  /* Round the corners of the image */
+    border-radius: 15px;
 }
 
-/* Styles for modal window */
+.image-item p {
+    display: none; /* Hide captions in the gallery */
+}
+
 .modal {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -69,12 +73,14 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
 }
 
 .modal-content {
     max-width: 80%;
     max-height: 80%;
     border-radius: 10px;
+    margin-bottom: 20px; /* Add space between image and caption */
 }
 
 .close {
@@ -88,9 +94,56 @@
 }
 
 .caption {
-    margin: 15px;
     color: #fff;
     font-size: 20px;
     text-align: center;
+    margin-top: 15px;
 }
 
+
+@media (max-width: 768px) {
+    .inspiration__content {
+        padding-top: 100px;
+    }
+
+    .inspiration-text {
+        font-size: 30px;
+        margin-top: -150px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-item {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .inspiration-text {
+        font-size: 25px;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-item {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .modal-content {
+        width: 95%;
+        height: auto;
+    }
+}

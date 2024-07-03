@@ -39,7 +39,7 @@ const Inspiration = () => {
     };
 
     return (
-        <div className='main__content'>
+        <div className='inspiration__content'>
             <p className='inspiration-text'>ВДОХНОВЛЯЙТЕСЬ, ВДОХНОВЛЯЙТЕ!</p>
             <div className='image-gallery'>
                 {images.map(image => (
@@ -56,7 +56,7 @@ const Inspiration = () => {
             </div>
             {selectedImage && (
                 <div className='modal' onClick={handleCloseModal}>
-                    <span className='close'>&times;</span>
+                    <span className='close' onClick={handleCloseModal}>&times;</span>
                     <img className='modal-content' src={selectedImage.image} alt={selectedImage.caption} />
                     <div className='caption'>{selectedImage.caption}</div>
                 </div>

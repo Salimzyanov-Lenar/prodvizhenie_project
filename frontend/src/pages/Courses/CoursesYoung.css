@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 @font-face {
     font-family: 'Involve';
     src: url('/fonts/Involve-Bold.ttf') format('truetype');
@@ -19,6 +23,7 @@
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    position: relative;
 }
 
 
@@ -31,18 +36,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    gap: 20px; /* Отступ между блоками и изображением */
-    position: relative; /* для позиционирования изображения */
+    position: relative;
+    width: 100%;
 }
 
 
 .image-container {
-    display: fixed;
-    margin-top: -400px;
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between image and blocks */
+    margin-left: 500px;
+    margin-left: 1300px;
 }
 
-.side-image {
-    width: 400px;
+.student-image {
+    width: 500px;
     height: auto;
 }
+

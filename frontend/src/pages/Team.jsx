@@ -29,6 +29,12 @@ const Team = () => {
         return text.replace(/-/g, '\u2011'); // \u2011 это Unicode для неразрывного дефиса
     };
 
+    const replace_WithNewline = (text) => {
+        return text.replace(/_/g, '</br>'); // '\n' это символ переноса строки
+    };
+
+    
+
     return (
         <div className='team__content'>
                 <p>БУДЕМ ЗНАКОМЫ! <br/>
@@ -43,7 +49,7 @@ const Team = () => {
                         />
                         <div className='team-details'>
                             <h2>{card.name}</h2>
-                            <p>{replaceHyphens(card.description)}</p>
+                            <p dangerouslySetInnerHTML={{ __html: replace_WithNewline(replaceHyphens(card.description)) }}></p>
                         </div>
                     </div>
                 ))}
