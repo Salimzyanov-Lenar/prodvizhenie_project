@@ -41,17 +41,3 @@ body {
 }
 
 
-.image-container {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Space between image and blocks */
-    margin-left: 500px;
-    margin-left: 1300px;
-}
-
-.student-image {
-    width: 500px;
-    height: auto;
-}
-

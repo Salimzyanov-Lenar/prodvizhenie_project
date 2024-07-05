@@ -25,6 +25,7 @@ const CourseList = ({ audienceSlug }) => {
 
   return (
     <div className='course-list'>
+      <div class="box1"></div>
       {courses.map((course, index) => (
         <div key={course.id} className='course-item'>
           <Link to={`/course/${course.slug}`}>
@@ -32,10 +33,10 @@ const CourseList = ({ audienceSlug }) => {
             <img src={logo} alt='logo' className='course-logo' />
             <h2 className='course-title'>{course.title}</h2>
             <p className='course-description'>{course.description}</p>
-            <img src={course.image} alt='' className='course-icon' />
           </Link>
         </div>
       ))}
+      <div className="box2"></div>
     </div>
   );
 };

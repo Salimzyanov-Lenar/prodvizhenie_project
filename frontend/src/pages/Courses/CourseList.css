@@ -97,12 +97,51 @@
     left: 20px;
 }
 
+.box1 {
+    margin-left: 100px;
+    width: 700px;
+    height: auto;
+    background-size: contain;
+    background-image: url(./boy.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}   
+    
+.box2 {
+    width: 400px;
+    height: auto;
+    background-size: contain;
+    background-image: url(./girl.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 8;
+    grid-row-end: 10;
+}
+
 /* Медиа-запрос для мобильных устройств */
 @media (max-width: 768px) {
     .course-list {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    
+    .box1 {
+        display: none;
+    }
+
+    .box2 {
+        display: none;
     }
 
     .course-item {
