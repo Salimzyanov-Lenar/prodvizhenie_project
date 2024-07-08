@@ -26,9 +26,10 @@ DATABASES = {
 
 # Настройки для статических и медиа файлов
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -39,7 +40,7 @@ SECRET_KEY = 'django-insecure-t*7+=#1%=q5bpqwi4@t#e1y@ohpzrx856=72pj0ubr7(d%_lol
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,6 +83,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 
 ROOT_URLCONF = 'backend.urls'
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 TEMPLATES = [
     {
