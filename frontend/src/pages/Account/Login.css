@@ -18,7 +18,7 @@
     justify-content: center;
     height: 100vh;
     background-color: #ffffff;
-    width: 1200px;
+    max-width: 1200px;
     height: auto;
     margin: auto;
     margin-top: 85px;
@@ -120,32 +120,40 @@
     font-family: 'Involve', sans-serif;
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 1400px) {
     .login-container {
         flex-direction: column;
-        width: 40%; /* Уменьшаем ширину контейнера */
-        margin-left: -350px;
+        width: 90%;
+        height: auto;
+        align-items: center;
+        margin-left: auto;
     }
 
     .login-image {
-        display: none; /* Скрываем изображение на мобильных устройствах */
+        display: none;
     }
 
     .account-login-form {
-        width: 100%; /* Увеличиваем ширину формы на мобильных устройствах */
-        padding: 20px; /* Уменьшаем внутренние отступы */
+        width: 90%;
+        margin-left: 10%;
+        padding: 20px;
     }
 
     .login-form input {
-        width: 90%; /* Уменьшаем ширину полей ввода на мобильных устройствах */
+        width: 300px;
+        padding: 20px;
     }
 
     .button-container-login {
         width: 90%;
+        margin-left: -350px;
+        padding-right: 20px;
     }
 
     .button-container-login button {
         max-width: 100%;
-        margin-left: -200px;
+        margin-top: 20px;
     }
+    
 }

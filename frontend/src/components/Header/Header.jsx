@@ -27,6 +27,7 @@ export const Header = () => {
 
     return (
         <header className="header">
+            
              <Link to="/" className="header__logo-link">
                 <img src={Logo} alt="Logo" className="header__logo" />
             </Link>

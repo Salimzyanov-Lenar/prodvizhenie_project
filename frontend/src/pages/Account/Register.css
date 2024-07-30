@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100vh;
     background-color: #ffffff;
+    margin: 0;
 }
 
 @font-face {
@@ -151,30 +152,37 @@
 
 
 
-@media (max-width: 768px) {
+/* Медиа-запросы для экранов шириной меньше 1400px */
+@media (max-width: 1400px) {
+    .register-image {
+        display: none; /* Скрываем изображение */
+    }
+
     .register-container {
         flex-direction: column;
         width: 90%; /* Уменьшаем ширину контейнера */
-    }
-
-    .register-image {
-        display: none; /* Скрываем изображение на мобильных устройствах */
+        height: auto;
+        align-items: center; /* Центрирование элементов */
     }
 
     .account-register-form {
-        width: 100%; /* Увеличиваем ширину формы на мобильных устройствах */
-    }
-
-    .register-form input {
-        width: 90%; /* Уменьшаем ширину полей ввода на мобильных устройствах */
-    }
-
-    .button-container {
         width: 90%;
     }
 
+
+    .button-container {
+        width: 100%;
+        padding: 30px; /* Добавляем отступы для контейнера */
+        justify-content: center;
+        display: flex;
+    }
+
     .button-container button {
-        margin-left: 20%;
-        max-width: 100%;
+        width: 90%;
+        max-width: none; /* Убираем ограничение по ширине */
+        max-height: 80px;
+        margin-top: 20px;
+        margin-left: 25%;
+        
     }
 }

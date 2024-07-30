@@ -50,7 +50,7 @@ const Account = () => {
                     </div>
                     <h1>ДОБРО ПОЖАЛОВАТЬ!</h1>
                     <p>Если у вас есть проблемы в продвижении<br /> — напишите нам. <br /><br />Детально опишите ситуацию:<br /> проблемы, результаты, желания, а наша команда экспертов даст индивидуальную обратную связь.<br /><br /> С заботой, ваше ПРОдвижение!</p>
-                    <a href="mailto:salimzyanov_lenar@mail.ru">
+                    <a href="mailto:prodvizhenie@mail.ru">
                         <button className="account-button-right">написать нам</button>
                     </a>
                 </div>

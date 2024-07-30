@@ -16,13 +16,23 @@ from pathlib import Path
 # Определите BASE_DIR как объект Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Настройки базы данных
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'prodvizhenie',
+        'USER': 'root',
+        'PASSWORD': 'Lenargamer04!',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Настройки для статических и медиа файлов
 STATIC_URL = '/static/'
